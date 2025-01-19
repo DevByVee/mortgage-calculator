@@ -15,7 +15,7 @@ This is a solution to the [Mortgage repayment calculator challenge on Frontend M
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+
 
 ## Overview
 
@@ -60,11 +60,11 @@ This project gave me the opportunity to strengthen my skills in creating accessi
 Integrate Tailwind CSS for responsive layouts quickly and efficiently.
 Enhance user experience with focus and hover states.
 Dynamically calculate repayment amounts based on user input.
+
+
 Here’s an example of the JavaScript logic I implemented:
 
-javascript
-Copy
-Edit
+
 function calculateRepayment(principal, interestRate, term) {
   const monthlyRate = interestRate / 100 / 12;
   const totalPayments = term * 12;
@@ -87,8 +87,8 @@ In the future, I’d like to:
 
 ### Useful resources
 
-- [Example resource 1](https://www.youtube.com/watch?v=arftp8kFBBg&t=207s) - This helped me set up my Tailwind CSS workflow and provided useful tips for responsive design.
-- [Example resource 2](https://nerdcave.com/tailwind-cheat-sheet) - A great reference for using Tailwind CSS effectively.
+- [https://www.youtube.com/watch?v=arftp8kFBBg&t=207s](https://www.youtube.com/watch?v=arftp8kFBBg&t=207s) - This helped me set up my Tailwind CSS workflow and provided useful tips for responsive design.
+- [https://nerdcave.com/tailwind-cheat-sheet](https://nerdcave.com/tailwind-cheat-sheet) - A great reference for using Tailwind CSS effectively.
 
 
 ## Author
