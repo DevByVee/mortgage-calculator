@@ -185,7 +185,8 @@ calculate.addEventListener("click", function (event) {
     `;
     result_div.innerHTML = ""; 
     result_div.appendChild(result);
-  } else if (repayment.checked) {
+  }
+  else if (repayment.checked) {
     const result2 = document.createElement("div");
     result2.innerHTML = `
       <h3 style="color:white; font-weight:500; font-size:2rem; padding: 0 0 10px 25px;">Your results</h3>
@@ -235,5 +236,9 @@ clear.addEventListener("click", function (event) {
 
   const remove_former = document.querySelector(".none");
   remove_former.classList.remove("hidden"); 
+
+  [mortgageAmount, mortgageTerm, interestRate, check].forEach((input) => {
+    resetStyle(input); 
+  });
 });
 
