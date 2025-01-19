@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <link rel="stylesheet" href="output.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+     font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    div input, div span {
+      border-radius: none;
+    }
+    .pounds:focus-within span, .years:focus-within span, .rate:focus-within span {
+      background-color: #d5ea13; 
+      /* border-color: #d5ea13;  */
+      /* border: 1px solid transparent; */
+    }
+    .hidden{
+      display: none;
+    }
+    
+  
+    /* .img{
+      width: 50%;
+      height: 400px;
+      border-bottom-left-radius: 90px;
+      border-bottom-right-radius: 16px;
+      border-top-right-radius: 16px;
+      padding: 13% 0;
+    }
+    .img img{
+      width: 45%;
+      height: 45%;
+    }
+    .img p{
+      text-align: center;
+    } */
+    /* @media (min-width: 1024px){
+      .years-span{
+        position: absolute;
+        top: 0.5px; 
+        left: 63.2%;
+      }
+      
+    }
+     @media (max-width: 1024px){
+      .years-span{
+        position: absolute;
+        top: 0.6px; 
+        left: 60.1%;
+      }
+      
+    } */
+    /* .repayment:focus-within{
+      background-color: rgb(254, 252, 232);
+      border: 2px solid #d5ea13;
+      box-shadow: 0 0 5px rgba(255, 223, 0, 0.5);
+    } */
+    /* #mortgage-amount:hover:focus, #mortgage-term:hover:focus, #interest-rate:hover:focus {
+      border: 0.5px solid #d5ea13; 
+    } */
+   
+
+
+  </style>
+</head>
+<body class="bg-slate-300">
+
+  <div class="flex justify-center items-center w-auto h-auto xs:ms-2 xs:me-2 mt-10">
+    <form class="lg:flex lg:justify-between lg:items-center md:flex md:justify-between md:items-center sm:flex sm:justify-between sm:items-center shadow-xl lg:w-full md:w-full sm:w-full xs:w-[90%] max-w-4xl border rounded-2xl xs:rounded-none bg-white sm:ml-3 sm:mr-3">
+      <fieldset class="lg:w-1/2 flex flex-col lg:px-8 py-6 md:px-6 sm:px-6 xs:px-6">
+        <legend class="border-none flex justify-between items-center xs:block pt-4 lg:gap-36 md:gap-36 sm:gap-36">
+          <h2 class="lg:text-[1.1rem] md:text-md sm:text-[0.9rem] font-semibold text-slate-800 xs:text-xl xs:pb-2">Mortgage Calculator</h2>
+          <button class="text-gray-500 underline hover:text-gray-700 md:text-[0.7rem] lg:text-sm sm:text-[0.7rem] clear-all">Clear All</button>
+        </legend>
+        <label for="mortgage-amount" class="block text-sm font-medium text-slate-500 pb-2">Mortgage Amount</label>
+        <div class="relative mt-1  hover:border-gray-800 rounded-sm mb-3 pounds">
+          <span class="absolute inset-y-0 pl-3 flex items-center text-gray-700 w-9 h-9 xs:h-10 font-semibold border-none rounded-s-sm bg-slate-300 left-[0.5px] top-[0.6px] color">
+            £
+          </span>
+          <input type="number" id="mortgage-amount" name="mortgage-amount" class="block lg:w-96 md:w-full sm:w-[332px] xs:w-full pl-12 pr-3 py-2 border border-gray-400 rounded-sm shadow-sm focus:outline-none hover:border-gray-800
+          sm:text-sm ">
+          <div class="required invisible">This field is required</div>
+        </div>
+
+        <div class="years-rate flex items-center xs:block lg:gap-8 md:gap-4 sm:gap-4">
+          <div class="years">
+            <label for="mortgage-term" class="block text-sm font-medium text-slate-500 pb-2">Mortgage Term</label>
+            <div class="relative mt-1  hover:border-gray-800 rounded-sm mb-3 years">
+              <span class="absolute inset-y-0 pl-3 xs:pl-2 flex items-center text-gray-700 w-16 h-9 xs:h-10 xs:w-[19%] font-semibold border-none rounded-s-sm bg-slate-300 years-span lg:left-[63.1%] lg:top-[0.5px] md:left-[59.5%] md:top-[0.6px] sm:left-[59.5%] sm:top-[0.6px] xs:left-[81%] xs:top-[0.6px] color">
+                years
+              </span>
+              <input type="number" id="mortgage-term" name="mortgage-term" class="block sm:w-40 lg:w-44 md:w-40 pl-3 py-2 border border-gray-400 rounded-sm shadow-sm focus:outline-none    hover:border-gray-800
+              sm:text-sm xs:w-full " >
+              <div class="required invisible">This field is required</div>
+            </div>
+          </div>
+
+          <div class="Rate">
+            <label for="interest-rate" class="block text-sm font-medium text-slate-500 pb-2">Interest Rate</label>
+            <div class="relative mt-1  hover:border-gray-800 rounded-sm mb-3 years">
+              <span class="absolute inset-y-0 pl-3 xs:pl-3 flex items-center text-gray-700 w-9 h-9 xs:w-[13%] xs:h-10 font-semibold border-none rounded-s-sm bg-slate-300 lg:left-[79.1%] lg:top-[0.5px] md:left-[77.1%] md:top-[0.6px] sm:left-[77%] sm:top-[0.6px] xs:left-[87%] xs:top-[0.6px] color">
+                %
+              </span>
+              <input type="number" id="interest-rate" name="mortgage-amount" class="block sm:w-40 lg:w-44 md:w-40 pl-3 py-2 border border-gray-400 rounded-sm shadow-sm hover:border-gray-800 focus:outline-none
+              sm:text-sm xs:w-full " >
+               <div class="required invisible">This field is required</div>
+            </div>
+          </div>
+        </div>
+        
+        <h4 class="text-slate-500 text-sm font-medium pb-2">Mortgage Type</h4>
+        <div class="mb-3 check">
+          <div class="border border-gray-400 mb-2">
+            <div class=" py-2 focus-within:ring-2 
+            focus-within:border-customYellow 
+            focus-within:ring-customYellow focus-within:bg-yellow-50 hover:border-gray-800 rounded-sm flex items-center repayment">
+                <div class="inline-flex items-center ml-3 mr-2">
+                  <label class="relative flex items-center cursor-pointer" for="repayment">
+                    <input
+                      name="color"
+                      type="radio"
+                      class="peer h-4 w-4 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-customYellow transition-all"
+                      id="repayment"
+                    />
+                    <span class="absolute bg-customYellow w-2 h-2 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                  </label>
+                </div>
+                <p class="text-gray-700 font-semibold">
+                  Repayment
+                </p>
+            </div>
+          </div>
+          <div class="border border-gray-400">
+            <div class=" py-2 focus-within:ring-2  focus-within:border-customYellow focus-within:ring-customYellow focus-within:bg-yellow-50 hover:border-gray-800 rounded-sm flex items-center interest">
+                <div class="inline-flex items-center ml-3 mr-2">
+                  <label class="relative flex items-center cursor-pointer" for="interest-only">
+                    <input
+                      name="color"
+                      type="radio"
+                      class="peer h-4 w-4 cursor-pointer appearance-none rounded-full border border-slate-300 checked:border-customYellow transition-all"
+                      id="interest-only"
+                    />
+                    <span class="absolute bg-customYellow w-2 h-2 rounded-full opacity-0 peer-checked:opacity-100 transition-opacity duration-200 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
+                  </label>
+                </div>
+                <p class="text-gray-700 font-semibold">
+                  interest Only
+                </p>
+            </div>
+          </div>
+           <div class="required invisible">This field is required</div>
+        </div>
+       
+
+        <button class="calculate flex align-left border rounded-3xl border-customYellow bg-customYellow text-white font-semibold py-2 w-60">
+          <p class="flex items-center justify-center gap-2 text-slate-700"> 
+            <img src="./assets/images/icon-calculator.svg" alt="calculator-image" class="ml-3">
+            Calculate Repayments
+          </p>
+        </button>
+      </fieldset>
+
+      <fieldset class=" border img bg-slate-700 lg:w-1/2 xs:h-[380px] h-[520px] flex items-center justify-center rounded-br-[16px] rounded-tr-[16px] rounded-bl-[70px] xs:border-0 xs:rounded-none">
+        <div class="result_div"></div>
+        <div class="w-96 xs:w-full flex flex-col items-center justify-center none image">
+          <img src="./assets/images/illustration-empty.svg" alt="Illustration" class=" object-contain">
+          <h2 class="text-white text-xl font-semibold pb-3 tracking-wide flex justify-center">
+           Results shown here
+          </h2>
+          <p class="text-slate-300 text-center xs:text-[16px] lg:text-md md:text-md sm:text-sm">
+            Complete the form and click “calculate repayments” to see what 
+            your monthly repayments would be.
+          </p>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  
+  <div class="attribution text-lg">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge " class="no-underline">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/DevByVee" class="text-slate-700 no-underline">Victoria Orisanmi💖</a>.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
