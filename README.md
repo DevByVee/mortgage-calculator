@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/DevByVee/mortgage-calculator](https://your-solution-url.com)
-- Live Site URL: [https://mortgagecalculator-js.netlify.app/)](https://mortgagecalculator-js.netlify.app/)
+- Live Site URL: [https://mortgage-calculator-two-gamma.vercel.app/](https://mortgage-calculator-two-gamma.vercel.app/)
 
 ## My process
 
